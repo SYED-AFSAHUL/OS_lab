@@ -1,0 +1,511 @@
+ff.txt
+ff~
+ITStudent(1).txt
+nnn.txt~
+lab2-2~
+checkdir.sh~
+new1/newf.txt
+new1/vvvv/newdoc2
+new1/vvvv/newdoc2~
+new1/vvvv/newf.txt
+grep.sh
+grep.sh~
+.swp
+ff
+lab3/checkdir.sh
+lab3/grep.sh
+stud.txt~
+lab1.txt
+lab2.txt
+ff.txt~
+student4@MIT-ICT-LAB4-01:~/Desktop$ ls /home/student4/Desktop/lab3
+checkdir.sh  first.sh  grep.sh  ls.sh  ls.sh~  q
+student4@MIT-ICT-LAB4-01:~/Desktop$ grep -lr 'a' 
+lab2-2
+ITStudent.txt
+stud.txt
+sorted.txt
+nnn.txt
+ff.txt
+ff~
+ITStudent(1).txt
+nnn.txt~
+lab2-2~
+checkdir.sh~
+new1/newf.txt
+new1/vvvv/newdoc2
+new1/vvvv/newdoc2~
+new1/vvvv/newf.txt
+grep.sh
+grep.sh~
+.swp
+ff
+lab3/checkdir.sh
+lab3/grep.sh
+stud.txt~
+lab1.txt
+lab2.txt
+ff.txt~
+student4@MIT-ICT-LAB4-01:~/Desktop$ grep -lr 'a' /home/student4/Desktop/lab3
+/home/student4/Desktop/lab3/checkdir.sh
+/home/student4/Desktop/lab3/grep.sh
+student4@MIT-ICT-LAB4-01:~/Desktop$ bash grep.sh a /home/student4/Desktop/lab3
+asddddddddd
+a
+/home/student4/Desktop/lab3
+/home/student4/Desktop/lab3/checkdir.sh
+/home/student4/Desktop/lab3/grep.sh
+student4@MIT-ICT-LAB4-01:~/Desktop$ ls
+abc           eee.txt~  hello.txt         lab3      sorted.txt
+abc~          ff        ITStudent(1).txt  new1      stud.txt
+abz           ff~       ITStudent.txt     newdoc1   stud.txt~
+catfiles.txt  ff.txt    lab1.txt          nnn.txt   Untitled Folder
+checkdir.sh~  ff.txt~   lab2-2            nnn.txt~  zby
+eee~          grep.sh   lab2-2~           nt.txt
+eee.txt       grep.sh~  lab2.txt          n.txt
+student4@MIT-ICT-LAB4-01:~/Desktop$ cd lab3
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ ls
+checkdir.sh  first.sh  grep.sh  ls.sh  ls.sh~  q
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ cd q
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls
+qq.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ sed 's/'.*.txt.*'/'.*.text'' *sed: -e expression #1, char 18: unterminated `s' command
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ sed 's/txt/text' *
+sed: -e expression #1, char 10: unterminated `s' command
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ sed 's/txt/text/g' *
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ sed -e 's/txt/text/g' *
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ clear
+
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ sed -e 's/\.txt/\.text/g' 
+^C
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ pwd
+/home/student4/Desktop/lab3/q
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ sed -e 's/\.txt/\.text/g' /home/student4/Desktop/lab3/q
+sed: read error on /home/student4/Desktop/lab3/q: Is a directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls |sed -e 's/\.txt/\.text/g'
+qq.text
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls |sed -e -r 's/\.txt/\.text/g'
+sed: -e expression #1, char 1: unknown command: `-'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls |sed -re 's/\.txt/\.text/g'
+qq.text
+w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls |sed -ire 's/\.txt/\.text/g'
+sed: no input files
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls |sed -rie 's/\.txt/\.text/g'
+sed: no input files
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls |sed -rei 's/\.txt/\.text/g'
+sed: -e expression #1, char 1: expected \ after `a', `c' or `i'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ man sed
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -rei 's/\.txt/\.text/g'
+sed: -e expression #1, char 1: expected \ after `a', `c' or `i'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -re 's/\.txt/\.text/g'
+w
+qq.text
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -re -i 's/\.txt/\.text/g'
+sed: -e expression #1, char 1: unknown command: `-'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -e 's/\.txt/\.text/g'
+w
+qq.text
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr a 
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ pwd
+/home/student4/Desktop/lab3/q
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ^C
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr a /home/student4/Desktop
+/home/student4/Desktop/lab2-2
+/home/student4/Desktop/ITStudent.txt
+/home/student4/Desktop/stud.txt
+/home/student4/Desktop/sorted.txt
+/home/student4/Desktop/nnn.txt
+/home/student4/Desktop/ff.txt
+/home/student4/Desktop/ff~
+/home/student4/Desktop/ITStudent(1).txt
+/home/student4/Desktop/nnn.txt~
+/home/student4/Desktop/lab2-2~
+/home/student4/Desktop/checkdir.sh~
+/home/student4/Desktop/new1/newf.txt
+/home/student4/Desktop/new1/vvvv/newdoc2
+/home/student4/Desktop/new1/vvvv/newdoc2~
+/home/student4/Desktop/new1/vvvv/newf.txt
+/home/student4/Desktop/grep.sh
+/home/student4/Desktop/grep.sh~
+/home/student4/Desktop/.swp
+/home/student4/Desktop/ff
+/home/student4/Desktop/lab3/checkdir.sh
+/home/student4/Desktop/lab3/grep.sh
+/home/student4/Desktop/stud.txt~
+/home/student4/Desktop/lab1.txt
+/home/student4/Desktop/lab2.txt
+/home/student4/Desktop/ff.txt~
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -e 's/\.txt/\.text/g'
+w
+qq.text
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -ie 's/\.txt/\.text/g'
+sed: no input files
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -e 's/\.txt/\.text/g'
+w
+qq.text
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r
+w  qq.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -e 's/\.txt/\.text/g' | ls
+qq.txt  w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls |sed -e 's/\.txt/\.text/g' | ls
+qq.txt  w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -e 's/\.txt/\.text/g'
+w
+qq.text
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -e 's/\.txt/\.text/g' | ls
+qq.txt  w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -e 's/\.txt/\.text/g' | ls w
+w.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -ei 's/\.txt/\.text/g'
+sed: -e expression #1, char 1: expected \ after `a', `c' or `i'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -ei\ 's/\.txt/\.text/g'
+s/.txt/.text/g
+w
+s/.txt/.text/g
+qq.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls -r |sed -ei 's/\.txt/\.text/g'
+sed: -e expression #1, char 1: expected \ after `a', `c' or `i'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -f '.*.txt' |sed -ei 's/\.txt/\.text/g'
+find: unknown predicate `-f'
+sed: -e expression #1, char 1: expected \ after `a', `c' or `i'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -f '.*.txt' |sed -e 's/\.txt/\.text/g'
+find: unknown predicate `-f'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find '.*.txt' |sed -e 's/\.txt/\.text/g'
+find: `.*.txt': No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -name '.*.txt' |sed -e 's/\.txt/\.text/g'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -name '.*.txt'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -name '.txt'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type '.txt'
+find: Arguments to -type should contain only one letter
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type -f
+find: Arguments to -type should contain only one letter
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f
+./w/w.txt
+./qq.txt
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f |sed -e 's/\.txt/\.text/g'
+./w/w.text
+./qq.text
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f |sed -ie 's/\.txt/\.text/g'
+sed: no input files
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f |sed -ei 's/\.txt/\.text/g'
+sed: -e expression #1, char 1: expected \ after `a', `c' or `i'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f |sed -e -i 's/\.txt/\.text/g'
+sed: -e expression #1, char 1: unknown command: `-'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f |sed -i -e 's/\.txt/\.text/g'
+sed: no input files
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f |sed -i --e 's/\.txt/\.text/g'
+sed: no input files
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f |sed --i --e 's/\.txt/\.text/g'
+sed: no input files
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f |sed --i -e 's/\.txt/\.text/g'
+sed: no input files
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f -name '*.txt' -print0 | xargs -0 rename 's/.txt$/.text/'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f -name '*.txt' -print0 | xargs -0 rename 's/.txt$/.text/'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f -name '*.txt' | rename 's/.txt$/.text/'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f -name '*.text' | rename 's/.text$/.txt/'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ echo file1 fi | xargs echo
+file1 fi
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls
+qq.txt  w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ cd ..
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ ls
+checkdir.sh  first.sh  grep.sh  ls.sh  ls.sh~  q
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ echo ls.sh grep.sh | xargs echo
+ls.sh grep.sh
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bc 10 + 4
+File 10 is unavailable.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bc 10 + 4
+File 10 is unavailable.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bc
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+^C
+(interrupt) use quit to exit.
+10 +^C
+(interrupt) use quit to exit.
+^C
+(interrupt) use quit to exit.
+quit
+(standard_in) 1: syntax error
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ 10 + 4 bc
+10: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bc>> 10 +4
+File +4 is unavailable.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bc>> 10+4
+^X^Z
+[2]+  Stopped                 bc >> 10+4
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bc>>10+4
+^X^Z
+[3]+  Stopped                 bc >> 10+4
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$  echo 'scale=3; 6.5/2.7' | bc
+2.407
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ echo 'scale=3; 6.5/2.7' | bc
+2.407
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ echo '6.5/2.7' | bc
+2
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ echo 'scale=2; 6.5/2.7' | bc
+2.40
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ echo 'scale=20; 6.5/2.7' | bc
+2.40740740740740740740
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ echo 'scale=20; 6.5/2.7'
+scale=20; 6.5/2.7
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ echo 'scale=20; 6.5/2.7'
+scale=20; 6.5/2.7
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ ls
+10  10+4  checkdir.sh  first.sh  grep.sh  ls.sh  ls.sh~  q  q4.sh  q4.sh~
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh 4 5
+(standard_in) 1: syntax error
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh
+(standard_in) 1: syntax error
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh
+(standard_in) 1: illegal character: $
+(standard_in) 1: illegal character: $
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ find -type f -name '*.txt' -print0 | xargs -0 rename 's/.txt$/.text/'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh
+(standard_in) 1: syntax error
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh
+(standard_in) 1: syntax error
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh 4 5
+9
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh 4 5
+9.4
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh 10 4
+15.0
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh 10 4
+15.0
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ man bc
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ man bc
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh 10.8 4
+15.88
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ 1.22+1.1|bc
+1.22+1.1: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ 1.22 + 1.1>>bc
+1.22: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bc<< 1.22 +1.1
+> vvv^C
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ ^C
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bc
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+1.22 + 1.1
+2.32
+^Z
+[4]+  Stopped                 bc
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bc -l 
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+1.2345 +^Z
+[5]+  Stopped                 bc -l
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh 10.8 4
+15.8
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh 10.8 4
+15.8
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh 10.8 4
+15.88
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ bash q4.sh 10.8 4
+15.88
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ find -type f
+./bc
+./q4.sh
+./10
+./q/qq.text
+./q/w/w.text
+./checkdir.sh
+./ls.sh~
+./ls.sh
+./first.sh
+./10+4
+./q4.sh~
+./grep.sh
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ find -type f
+./q4.sh
+./q/qq.text
+./q/w/w.text
+./checkdir.sh
+./ls.sh~
+./ls.sh
+./first.sh
+./q4.sh~
+./grep.sh
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ find -type f *
+find: paths must precede expression: checkdir.sh
+Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ man cp
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ find -type f -name '*.txt' -print0 | xargs -0 rename 's/.txt$/.text/'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ ls
+checkdir.sh  first.sh  grep.sh  ls.sh  ls.sh~  q  q4.sh  q4.sh~  q5.sh  q5.sh~
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3$ cd q
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls
+qq.text  w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh
+bash: q5.sh: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+bash: q5.sh: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+bash: q5.sh: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+cp: missing destination file operand after ‘/di’
+Try 'cp --help' for more information.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+cp: missing destination file operand after ‘/di’
+Try 'cp --help' for more information.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+cp: missing destination file operand after ‘/’
+Try 'cp --help' for more information.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+txt
+w
+cp: missing destination file operand after ‘/w’
+Try 'cp --help' for more information.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+txt
+w
+cp: missing destination file operand after ‘/w/’
+Try 'cp --help' for more information.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+txt
+w
+cp: invalid option -- '0'
+Try 'cp --help' for more information.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+txt
+w
+cp: cannot stat ‘*.txt’: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+txt
+w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+txt w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh txt w
+txt w
+txt
+w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh
+txt w
+txt
+w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ bash q5.sh
+txt w
+txt
+w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f -name '*.txt' | rename 's/.txt$/.text/'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ sep -e 's/[^ex: ex:$]/Example/g'
+No command 'sep' found, but there are 16 similar ones
+sep: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr 'ex:' | sep -e 's/[^ex: ex:$]/Example/g'
+No command 'sep' found, but there are 16 similar ones
+sep: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$  sep -e 's/[^ex: ex:$]/Example/g' ff
+No command 'sep' found, but there are 16 similar ones
+sep: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ sep -e 's/[^ex: ex:$]/Example/g'
+No command 'sep' found, but there are 16 similar ones
+sep: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ sep -e 's/ex/Example/g'
+No command 'sep' found, but there are 16 similar ones
+sep: command not found
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr 'ex:' | sed -e 's/[^ex: ex:$]/Example/g'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ ls
+q5.sh  q5.sh~  qq.text  w
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr 'ex:' | sed -e 's/[^ex: ex:$]/Example/g'
+ExampleExampleExampleExampleExampleExampleexExample
+ExampleExampleExampleExampleExampleExampleexExampleExample
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr 'ex:' 
+w/qq.text
+w/qq.text~
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr 'ex:' -print0 | xargs -0 sed -e 's/[^ex: ex:$]/Example/g'
+grep: invalid option -- 'p'
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ find -type f -name '*.txt' -print0 | xargs -0 rename 's/.txt$/.text/'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -l 'ex:' | sed -e 's/[^ex: ex:$]/Example/g'
+
+
+^Z
+[6]+  Stopped                 grep --color=auto -l 'ex:' | sed -e 's/[^ex: ex:$]/Example/g'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -l 'ex:' -print0 | xargs -0 sed -e 's/[^ex: ex:$]/Example/g'
+grep: invalid option -- 'p'
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -l 'ex:' | sed -e 's/[^ex: ex:$]/Example/g'
+^Z
+[7]+  Stopped                 grep --color=auto -l 'ex:' | sed -e 's/[^ex: ex:$]/Example/g'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -l 'ex:' 
+^Z
+[8]+  Stopped                 grep --color=auto -l 'ex:'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr 'ex:' 
+w/qq.text
+w/qq.text~
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -l 'ex:' *
+grep: w: Is a directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -rl 'ex:' *
+w/qq.text
+w/qq.text~
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -rl 'ex:' 
+w/qq.text
+w/qq.text~
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -l 'ex:' *
+grep: w: Is a directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -l 'ex:' * -print0 | xargs -0 sed -e 's/[^ex: ex:$]/Example/g'
+grep: invalid option -- 'p'
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -l 'ex:' * | xargs -0 sed -e 's/[^ex: ex:$]/Example/g'
+grep: w: Is a directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -l 'ex:' | xargs -0 sed -e 's/[^ex: ex:$]/Example/g'
+^Z
+[9]+  Stopped                 grep --color=auto -l 'ex:' | xargs -0 sed -e 's/[^ex: ex:$]/Example/g'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr 'ex:' | xargs -0 sed -e 's/[^ex: ex:$]/Example/g'
+sed: can't read w/qq.text
+w/qq.text~
+: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr 'ex:' | xargs -0 sed -e 's/[^ex: ex:$]/Example/g'
+sed: can't read w/qq.text
+w/qq.text~
+: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -l 'ex:' | xargs -0 sed -e 's/[^ex: , ex:$]/Example/g'
+^Z
+[10]+  Stopped                 grep --color=auto -l 'ex:' | xargs -0 sed -e 's/[^ex: , ex:$]/Example/g'
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr 'ex:' | xargs -0 sed -e 's/[^ex: , ex:$]/Example/g'
+sed: can't read w/qq.text
+w/qq.text~
+: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr 'ex:'
+w/qq.text
+w/qq.text~
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr [^ex: , ex:$]
+grep: Unmatched [ or [^
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr [ex:.* ,.Example:$]
+grep: Unmatched [ or [^
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr [ex:.* ,.Example:$]
+grep: Unmatched [ or [^
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr [ex:]
+q5.sh~
+q5.sh
+w/qq.text
+w/qq.text~
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr [^ex:]
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr [ex:$]
+q5.sh~
+q5.sh
+w/qq.text
+w/qq.text~
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr [ex: ex:$]
+grep: Unmatched [ or [^
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr [ex:- ex:$]
+grep: Unmatched [ or [^
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr {ex: ex:$}
+grep: ex:$}: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr {ex:, ex:$}
+grep: ex:$}: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ grep -lr {ex:,ex:$}
+grep: ex:$: No such file or directory
+student4@MIT-ICT-LAB4-01:~/Desktop/lab3/q$ 
+

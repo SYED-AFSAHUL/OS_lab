@@ -1,0 +1,291 @@
+dionysus@Hephaestus:~/Desktop$ touch dd
+dionysus@Hephaestus:~/Desktop$ ls
+abcd efg - sample resume (copy).doc  IMG-20170718-WA0000.jpg  pass_dict3.txt
+dd                                   pass_dict1.txt           pass_dict.txt
+ff.txt                               pass_dict2.txt
+dionysus@Hephaestus:~/Desktop$ cd ..
+dionysus@Hephaestus:~$ cd ~
+dionysus@Hephaestus:~$ cd Desktop
+dionysus@Hephaestus:~/Desktop$ cd ~
+dionysus@Hephaestus:~$ File dd
+No command 'File' found, did you mean:
+ Command 'vile' from package 'vile' (universe)
+ Command 'file' from package 'file' (main)
+ Command 'kile' from package 'kile' (universe)
+ Command 'zile' from package 'zile' (universe)
+File: command not found
+dionysus@Hephaestus:~$ file dd
+dd: cannot open `dd' (No such file or directory)
+dionysus@Hephaestus:~$ cd Desktop
+dionysus@Hephaestus:~/Desktop$ file dd
+dd: empty
+dionysus@Hephaestus:~/Desktop$ file ff
+ff: cannot open `ff' (No such file or directory)
+dionysus@Hephaestus:~/Desktop$ file ff.txt
+ff.txt: ASCII text
+dionysus@Hephaestus:~/Desktop$ cat ff.txt
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+
+dionysus@Hephaestus:~/Desktop$ head ff.txt
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+abcdefg
+dionysus@Hephaestus:~/Desktop$ ls
+abcd efg - sample resume (copy).doc  IMG-20170718-WA0000.jpg  pass_dict3.txt
+dd                                   pass_dict1.txt           pass_dict.txt
+ff                                   pass_dict2.txt
+dionysus@Hephaestus:~/Desktop$ cp ff /a
+cp: cannot create regular file '/a': Permission denied
+dionysus@Hephaestus:~/Desktop$ cp ff /Downloads
+cp: cannot create regular file '/Downloads': Permission denied
+dionysus@Hephaestus:~/Desktop$ cp ff Downloads
+dionysus@Hephaestus:~/Desktop$ cp ff a
+dionysus@Hephaestus:~/Desktop$ mv ff a
+dionysus@Hephaestus:~/Desktop$ rm dd
+dionysus@Hephaestus:~/Desktop$ mkdir ab
+dionysus@Hephaestus:~/Desktop$ rmdir ab
+dionysus@Hephaestus:~/Desktop$ cat >dd.txt
+wery
+rtyy
+ttuu
+;
+^Z
+[1]+  Stopped                 cat > dd.txt
+dionysus@Hephaestus:~/Desktop$ cat dd.txt
+wery
+rtyy
+ttuu
+;
+dionysus@Hephaestus:~/Desktop$ more dd.txt
+wery
+rtyy
+ttuu
+;
+dionysus@Hephaestus:~/Desktop$ head -2 ff
+abcdefg
+abcdefg
+dionysus@Hephaestus:~/Desktop$ head -n \2 ff
+abcdefg
+abcdefg
+dionysus@Hephaestus:~/Desktop$ head -n 2 ff
+abcdefg
+abcdefg
+dionysus@Hephaestus:~/Desktop$ head -c 2 ff
+abdionysus@Hephaestus:~/Desktop$ man cp
+
+[2]+  Stopped                 man cp
+dionysus@Hephaestus:~/Desktop$ cp -i ff a
+cp: overwrite 'a/ff'? n
+dionysus@Hephaestus:~/Desktop$ cp -n ff a
+dionysus@Hephaestus:~/Desktop$ mv -i ff a
+mv: overwrite 'a/ff'? n
+dionysus@Hephaestus:~/Desktop$ mv ff dd a
+mv: cannot stat 'dd': No such file or directory
+dionysus@Hephaestus:~/Desktop$ mv ff,dd a
+mv: cannot stat 'ff,dd': No such file or directory
+dionysus@Hephaestus:~/Desktop$ mv ff dd ... a
+mv: cannot stat 'ff': No such file or directory
+mv: cannot stat 'dd': No such file or directory
+mv: cannot stat '...': No such file or directory
+dionysus@Hephaestus:~/Desktop$ mv ff dd.txt a
+dionysus@Hephaestus:~/Desktop$ man rm
+
+
+dionysus@Hephaestus:~/Desktop$ rm -i ab
+rm: cannot remove 'ab': Is a directory
+dionysus@Hephaestus:~/Desktop$ rm -i ab
+rm: cannot remove 'ab': Is a directory
+dionysus@Hephaestus:~/Desktop$ cd ab
+dionysus@Hephaestus:~/Desktop/ab$ ls
+pass_dict1.txt  pass_dict2.txt  pass_dict3.txt  pass_dict.txt
+dionysus@Hephaestus:~/Desktop/ab$ rm -i pass_dict2.txt
+rm: remove regular file 'pass_dict2.txt'? n
+dionysus@Hephaestus:~/Desktop/ab$ rm -r pass_dict2.txt
+dionysus@Hephaestus:~/Desktop/ab$ man rm
+
+
+dionysus@Hephaestus:~/Desktop/ab$ man find
+
+[5]+  Stopped                 man find
+dionysus@Hephaestus:~/Desktop/ab$ find a ff
+find: ‘a’: No such file or directory
+find: ‘ff’: No such file or directory
+dionysus@Hephaestus:~/Desktop/ab$ find ff
+find: ‘ff’: No such file or directory
+dionysus@Hephaestus:~/Desktop/ab$ cd .
+dionysus@Hephaestus:~/Desktop/ab$ cd ..
+dionysus@Hephaestus:~/Desktop$ find ff
+find: ‘ff’: No such file or directory
+dionysus@Hephaestus:~/Desktop$ ls
+a                                    Downloads                pass_dict2.txt
+ab                                   IMG-20170718-WA0000.jpg  pass_dict3.txt
+abcd efg - sample resume (copy).doc  pass_dict1.txt           pass_dict.txt
+dionysus@Hephaestus:~/Desktop$ find ff
+ff
+dionysus@Hephaestus:~/Desktop$ find ff a
+ff
+a
+a/ff
+a/dd.txt
+dionysus@Hephaestus:~/Desktop$ find -type ff a
+find: Arguments to -type should contain only one letter
+dionysus@Hephaestus:~/Desktop$ find -type ff
+find: Arguments to -type should contain only one letter
+dionysus@Hephaestus:~/Desktop$ find -type f
+./ab/pass_dict.txt
+./ab/pass_dict3.txt
+./ab/pass_dict1.txt
+./pass_dict.txt
+./abcd efg - sample resume (copy).doc
+./pass_dict3.txt
+./a/ff
+./a/dd.txt
+./Downloads
+./pass_dict1.txt
+./IMG-20170718-WA0000.jpg
+./pass_dict2.txt
+./ff
+./dd.txt
+dionysus@Hephaestus:~/Desktop$ find -type txt
+find: Arguments to -type should contain only one letter
+dionysus@Hephaestus:~/Desktop$ find -type t
+find: Unknown argument to -type: t
+dionysus@Hephaestus:~/Desktop$ find -type f
+./ab/pass_dict.txt
+./ab/pass_dict3.txt
+./ab/pass_dict1.txt
+./pass_dict.txt
+./abcd efg - sample resume (copy).doc
+./pass_dict3.txt
+./a/ff
+./a/dd.txt
+./Downloads
+./pass_dict1.txt
+./IMG-20170718-WA0000.jpg
+./pass_dict2.txt
+./ff
+./dd.txt
+dionysus@Hephaestus:~/Desktop$ find -type d
+.
+./ab
+./a
+dionysus@Hephaestus:~/Desktop$ finf *.txt
+No command 'finf' found, did you mean:
+ Command 'find' from package 'findutils' (main)
+ Command 'fnf' from package 'confluence' (universe)
+finf: command not found
+dionysus@Hephaestus:~/Desktop$ find *.txt
+dd.txt
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+pass_dict.txt
+dionysus@Hephaestus:~/Desktop$ find [0-9]
+find: ‘[0-9]’: No such file or directory
+dionysus@Hephaestus:~/Desktop$ find [0-9!]
+bash: !]: event not found
+dionysus@Hephaestus:~/Desktop$ find *[0-9]*
+IMG-20170718-WA0000.jpg
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+dionysus@Hephaestus:~/Desktop$ find ???*
+abcd efg - sample resume (copy).doc
+dd.txt
+Downloads
+IMG-20170718-WA0000.jpg
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+pass_dict.txt
+dionysus@Hephaestus:~/Desktop$ find ???*.*
+abcd efg - sample resume (copy).doc
+IMG-20170718-WA0000.jpg
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+pass_dict.txt
+dionysus@Hephaestus:~/Desktop$ find [!0-9]*
+a
+a/ff
+a/dd.txt
+ab
+ab/pass_dict.txt
+ab/pass_dict3.txt
+ab/pass_dict1.txt
+abcd efg - sample resume (copy).doc
+dd.txt
+Downloads
+ff
+IMG-20170718-WA0000.jpg
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+pass_dict.txt
+dionysus@Hephaestus:~/Desktop$ find [a,e,i,o,u]*
+a
+a/ff
+a/dd.txt
+ab
+ab/pass_dict.txt
+ab/pass_dict3.txt
+ab/pass_dict1.txt
+abcd efg - sample resume (copy).doc
+dionysus@Hephaestus:~/Desktop$ find [!a,e,i,o,u]*
+dd.txt
+Downloads
+ff
+IMG-20170718-WA0000.jpg
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+pass_dict.txt
+dionysus@Hephaestus:~/Desktop$ find [!a,e,i,o,u,A,I]*
+dd.txt
+Downloads
+ff
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+pass_dict.txt
+dionysus@Hephaestus:~/Desktop$ 
+

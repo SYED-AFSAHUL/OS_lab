@@ -1,0 +1,335 @@
+dionysus@Hephaestus:~$ vi stud.txt
+dionysus@Hephaestus:~$ more stud.txt
+
+egistrationNo:Name:Department:Branch:Section:Sub1:Sub2:Sub3
+1:Syed:I&CT:IT:B:34:45:45
+2:Afsahul:I&CT:CCE:A:56:56:88
+3:Haque:CSE:CS:B:11:22:65
+4:Bahu:EEE:EE:A:34:23:89
+5:Somya:I&CT:IT:B:67:23:34
+6:Palak:CSE:CCE:A:78:23:90
+7:Bansilaal:I&CT:IT:B:78:12:78
+8:Khan:I&CT:CCE:A:23:OS:DAA
+9:Aman:MECH:IT:B:87:43:65
+10:Zeus:MECH:CCE:A:56:34:67
+
+
+
+dionysus@Hephaestus:~$ grep 'I&CT' stud.txt
+grep: stud.txt: No such file or directory
+dionysus@Hephaestus:~$ cd Desktop
+dionysus@Hephaestus:~/Desktop$ ls
+a                                    ff                       pass_dict3.txt
+ab                                   IMG-20170718-WA0000.jpg  pass_dict.txt
+abcd efg - sample resume (copy).doc  new.txt                  stud.txt
+dd.txt                               pass_dict1.txt
+Downloads                            pass_dict2.txt
+dionysus@Hephaestus:~/Desktop$ grep 'I&CT' stud.txt
+1:Syed:I&CT:IT:B:34:45:45
+2:Afsahul:I&CT:CCE:A:56:56:88
+5:Somya:I&CT:IT:B:67:23:34
+7:Bansilaal:I&CT:IT:B:78:12:78
+8:Khan:I&CT:CCE:A:23:OS:DAA
+dionysus@Hephaestus:~/Desktop$ grep 'I&CT' stud.txt | wc -l
+5
+dionysus@Hephaestus:~/Desktop$ man tr
+
+[1]+  Stopped                 man tr
+dionysus@Hephaestus:~/Desktop$ tr abc ABC
+aasaxcvvvbbvfcgsctrsaaaabbbcbcvcvx
+AAsAxCvvvBBvfCgsCtrsAAAABBBCBCvCvx
+gvh
+gvh
+bbbbbbbbbbbbb
+BBBBBBBBBBBBB
+^Z
+[2]+  Stopped                 tr abc ABC
+dionysus@Hephaestus:~/Desktop$ tr [:lower: [:upper:]
+tr: misaligned [:upper:] and/or [:lower:] construct
+dionysus@Hephaestus:~/Desktop$ tr [:lower:] [:upper:]
+ehshghvbnlutfhhhltrdtfgyuiolknmbvxcgxdthsdf
+EHSHGHVBNLUTFHHHLTRDTFGYUIOLKNMBVXCGXDTHSDF
+h
+H
+KKK
+KKK
+^Z
+[3]+  Stopped                 tr [:lower:] [:upper:]
+dionysus@Hephaestus:~/Desktop$ ls
+a                                    ff                       pass_dict3.txt
+ab                                   IMG-20170718-WA0000.jpg  pass_dict.txt
+abcd efg - sample resume (copy).doc  new.txt                  stud.txt
+dd.txt                               pass_dict1.txt
+Downloads                            pass_dict2.txt
+dionysus@Hephaestus:~/Desktop$ more new.txt
+23abcde
+ab45cd
+abc56
+dionysus@Hephaestus:~/Desktop$ sed 'aaaabbb' new.txt
+23abcde
+aaabbb
+ab45cd
+aaabbb
+abc56
+aaabbb
+dionysus@Hephaestus:~/Desktop$ more new.txt
+23abcde
+ab45cd
+abc56
+dionysus@Hephaestus:~/Desktop$ sed 'aaaabbb/' new.txt
+23abcde
+aaabbb/
+ab45cd
+aaabbb/
+abc56
+aaabbb/
+dionysus@Hephaestus:~/Desktop$ sed '/aaaabbb/' new.txt
+sed: -e expression #1, char 9: missing command
+dionysus@Hephaestus:~/Desktop$ sed -e '/aaaabbb/' new.txt
+sed: -e expression #1, char 9: missing command
+dionysus@Hephaestus:~/Desktop$ more new.txt
+23abcde
+ab45cd
+abc56
+dionysus@Hephaestus:~/Desktop$ sed -e 'aaaabbb' new.txt
+23abcde
+aaabbb
+ab45cd
+aaabbb
+abc56
+aaabbb
+dionysus@Hephaestus:~/Desktop$ more new.txt
+23abcde
+ab45cd
+abc56
+dionysus@Hephaestus:~/Desktop$ sed -e 'aaaabbb/' new.txt
+23abcde
+aaabbb/
+ab45cd
+aaabbb/
+abc56
+aaabbb/
+dionysus@Hephaestus:~/Desktop$ sed -e 's/aaaabbb/' new.txt
+sed: -e expression #1, char 10: unterminated `s' command
+dionysus@Hephaestus:~/Desktop$ more new.txt
+23abcde
+ab45cd
+abc56
+dionysus@Hephaestus:~/Desktop$ sed 's/abc56/aaaabbb/' new.txt
+23abcde
+ab45cd
+aaaabbb
+dionysus@Hephaestus:~/Desktop$ more new.txt
+23abcde
+ab45cd
+abc56
+dionysus@Hephaestus:~/Desktop$ sed 's/I&CT/Information Technology/' new.txt >ITStudent.txt
+dionysus@Hephaestus:~/Desktop$ ls
+a                                    ff                       pass_dict2.txt
+ab                                   IMG-20170718-WA0000.jpg  pass_dict3.txt
+abcd efg - sample resume (copy).doc  ITStudent.txt            pass_dict.txt
+dd.txt                               new.txt                  stud.txt
+Downloads                            pass_dict1.txt
+dionysus@Hephaestus:~/Desktop$ more ITStudent.txt
+23abcde
+ab45cd
+abc56
+dionysus@Hephaestus:~/Desktop$ sed 's/I&CT/Information Technology/' stud.txt >ITStudent.txt
+dionysus@Hephaestus:~/Desktop$ more ITStudent.txt
+RegistrationNo:Name:Department:Branch:Section:Sub1:Sub2:Sub3
+1:Syed:Information Technology:IT:B:34:45:45
+2:Afsahul:Information Technology:CCE:A:56:56:88
+3:Haque:CSE:CS:B:11:22:65
+4:Bahu:EEE:EE:A:34:23:89
+5:Somya:Information Technology:IT:B:67:23:34
+6:Palak:CSE:CCE:A:78:23:90
+7:Bansilaal:Information Technology:IT:B:78:12:78
+8:Khan:Information Technology:CCE:A:23:OS:DAA
+9:Aman:MECH:IT:B:87:43:65
+10:Zeus:MECH:CCE:A:56:34:67
+
+
+
+dionysus@Hephaestus:~/Desktop$ bc
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+bc 4;
+(standard_in) 1: syntax error
+^Z
+[4]+  Stopped                 bc
+dionysus@Hephaestus:~/Desktop$ bc 5 + 8
+File 5 is unavailable.
+dionysus@Hephaestus:~/Desktop$ bc
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'. 
+6 +  1
+7
+^Z
+[5]+  Stopped                 bc
+dionysus@Hephaestus:~/Desktop$ grep '^1' stud.txt
+1:Syed:I&CT:IT:B:34:45:45
+10:Zeus:MECH:CCE:A:56:34:67
+dionysus@Hephaestus:~/Desktop$ grep '^1:' stud.txt
+1:Syed:I&CT:IT:B:34:45:45
+dionysus@Hephaestus:~/Desktop$ grep 'MIT' *
+grep: a: Is a directory
+grep: ab: Is a directory
+pass_dict1.txt:AMIT
+pass_dict1.txt:AMIT87
+pass_dict1.txt:AMITKUMAR
+pass_dict1.txt:AMITR
+pass_dict1.txt:AMITUOFO
+pass_dict1.txt:AMITY526
+pass_dict1.txt:ASSAMITA
+pass_dict1.txt:CHAMITO
+pass_dict1.txt:DIMITRA31
+pass_dict1.txt:EMIT0603
+pass_dict1.txt:ERMITA_N
+pass_dict2.txt:AMIT
+pass_dict2.txt:AMIT87
+pass_dict2.txt:AMITKUMAR
+pass_dict2.txt:AMITR
+pass_dict2.txt:AMITUOFO
+pass_dict2.txt:AMITY526
+pass_dict2.txt:ASSAMITA
+pass_dict2.txt:CHAMITO
+pass_dict2.txt:DIMITRA31
+pass_dict2.txt:EMIT0603
+pass_dict2.txt:ERMITA_N
+pass_dict3.txt:AMIT
+pass_dict3.txt:AMIT87
+pass_dict3.txt:AMITKUMAR
+pass_dict3.txt:AMITR
+pass_dict3.txt:AMITUOFO
+pass_dict3.txt:AMITY526
+pass_dict3.txt:ASSAMITA
+pass_dict3.txt:CHAMITO
+pass_dict3.txt:DIMITRA31
+pass_dict3.txt:EMIT0603
+pass_dict3.txt:ERMITA_N
+pass_dict.txt:AMIT
+pass_dict.txt:AMIT87
+pass_dict.txt:AMITKUMAR
+pass_dict.txt:AMITR
+pass_dict.txt:AMITUOFO
+pass_dict.txt:AMITY526
+pass_dict.txt:ASSAMITA
+pass_dict.txt:CHAMITO
+pass_dict.txt:DIMITRA31
+pass_dict.txt:EMIT0603
+pass_dict.txt:ERMITA_N
+dionysus@Hephaestus:~/Desktop$ grep 'MIT'
+*
+^Z
+[6]+  Stopped                 grep --color=auto 'MIT'
+dionysus@Hephaestus:~/Desktop$ grep 'MIT' * | sed 's/MIT/Manipal Institute of Technology/'
+grep: a: Is a directory
+grep: ab: Is a directory
+pass_dict1.txt:AManipal Institute of Technology
+pass_dict1.txt:AManipal Institute of Technology87
+pass_dict1.txt:AManipal Institute of TechnologyKUMAR
+pass_dict1.txt:AManipal Institute of TechnologyR
+pass_dict1.txt:AManipal Institute of TechnologyUOFO
+pass_dict1.txt:AManipal Institute of TechnologyY526
+pass_dict1.txt:ASSAManipal Institute of TechnologyA
+pass_dict1.txt:CHAManipal Institute of TechnologyO
+pass_dict1.txt:DIManipal Institute of TechnologyRA31
+pass_dict1.txt:EManipal Institute of Technology0603
+pass_dict1.txt:ERManipal Institute of TechnologyA_N
+pass_dict2.txt:AManipal Institute of Technology
+pass_dict2.txt:AManipal Institute of Technology87
+pass_dict2.txt:AManipal Institute of TechnologyKUMAR
+pass_dict2.txt:AManipal Institute of TechnologyR
+pass_dict2.txt:AManipal Institute of TechnologyUOFO
+pass_dict2.txt:AManipal Institute of TechnologyY526
+pass_dict2.txt:ASSAManipal Institute of TechnologyA
+pass_dict2.txt:CHAManipal Institute of TechnologyO
+pass_dict2.txt:DIManipal Institute of TechnologyRA31
+pass_dict2.txt:EManipal Institute of Technology0603
+pass_dict2.txt:ERManipal Institute of TechnologyA_N
+pass_dict3.txt:AManipal Institute of Technology
+pass_dict3.txt:AManipal Institute of Technology87
+pass_dict3.txt:AManipal Institute of TechnologyKUMAR
+pass_dict3.txt:AManipal Institute of TechnologyR
+pass_dict3.txt:AManipal Institute of TechnologyUOFO
+pass_dict3.txt:AManipal Institute of TechnologyY526
+pass_dict3.txt:ASSAManipal Institute of TechnologyA
+pass_dict3.txt:CHAManipal Institute of TechnologyO
+pass_dict3.txt:DIManipal Institute of TechnologyRA31
+pass_dict3.txt:EManipal Institute of Technology0603
+pass_dict3.txt:ERManipal Institute of TechnologyA_N
+pass_dict.txt:AManipal Institute of Technology
+pass_dict.txt:AManipal Institute of Technology87
+pass_dict.txt:AManipal Institute of TechnologyKUMAR
+pass_dict.txt:AManipal Institute of TechnologyR
+pass_dict.txt:AManipal Institute of TechnologyUOFO
+pass_dict.txt:AManipal Institute of TechnologyY526
+pass_dict.txt:ASSAManipal Institute of TechnologyA
+pass_dict.txt:CHAManipal Institute of TechnologyO
+pass_dict.txt:DIManipal Institute of TechnologyRA31
+pass_dict.txt:EManipal Institute of Technology0603
+pass_dict.txt:ERManipal Institute of TechnologyA_N
+dionysus@Hephaestus:~/Desktop$ find [0-9]
+find: ‘[0-9]’: No such file or directory
+dionysus@Hephaestus:~/Desktop$ find *[0-9]*
+IMG-20170718-WA0000.jpg
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+dionysus@Hephaestus:~/Desktop$ find *[0-9]* | wc
+      4       4      69
+dionysus@Hephaestus:~/Desktop$ find *[0-9]* | wc -l
+4
+dionysus@Hephaestus:~/Desktop$ find -r *[0-9]* | wc -l
+find: unknown predicate `-r'
+0
+dionysus@Hephaestus:~/Desktop$ find  *[0-9]* | wc -r
+wc: invalid option -- 'r'
+Try 'wc --help' for more information.
+dionysus@Hephaestus:~/Desktop$ wc pass_dict1.txt
+ 728383  729683 7497284 pass_dict1.txt
+dionysus@Hephaestus:~/Desktop$ find  *[0-9]* | wc --r
+wc: unrecognized option '--r'
+Try 'wc --help' for more information.
+dionysus@Hephaestus:~/Desktop$ wc IMG-20170718-WA0000.jpg
+  359  1901 93469 IMG-20170718-WA0000.jpg
+dionysus@Hephaestus:~/Desktop$ find  *[0-9]* | wc 
+      4       4      69
+dionysus@Hephaestus:~/Desktop$ wc
+
+^Z
+[7]+  Stopped                 wc
+dionysus@Hephaestus:~/Desktop$ find  *[0-9]*
+IMG-20170718-WA0000.jpg
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+dionysus@Hephaestus:~/Desktop$ find  *[0-9]*|wc
+      4       4      69
+dionysus@Hephaestus:~/Desktop$ wc|find  *[0-9]*
+IMG-20170718-WA0000.jpg
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+
+^Z
+[8]+  Stopped                 wc | find *[0-9]*
+dionysus@Hephaestus:~/Desktop$ find  *[0-9]*|wc
+      3       3      45
+dionysus@Hephaestus:~/Desktop$ find  *[0-9]*
+pass_dict1.txt
+pass_dict2.txt
+pass_dict3.txt
+dionysus@Hephaestus:~/Desktop$ cd ab
+dionysus@Hephaestus:~/Desktop/ab$ ls
+pass_dict1.txt  pass_dictj.txt  pass_dict.txt
+dionysus@Hephaestus:~/Desktop/ab$ find  *[0-9]*|wc
+      1       1      15
+dionysus@Hephaestus:~/Desktop/ab$ wc 'find  *[0-9]*'
+wc: 'find  *[0-9]*': No such file or directory
+dionysus@Hephaestus:~/Desktop/ab$ 
+
