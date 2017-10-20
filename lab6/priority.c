@@ -7,7 +7,7 @@ int main(void)
   printf("enter no of tasks:-");
   scanf("%d", &n);//cin>>n;
 
-  for(i=0;i<n;i++)
+  for(i=0;i<n;i++)      // take n input
      {
        printf("for task %d",i+1);
        printf("\nBurst time= ");
@@ -16,9 +16,9 @@ int main(void)
        scanf("%d",(b+i));//cin>>b[i];
        c[i]=i+1;
      }
-  for(i=n-1;i>0;i--)
+  for(i=n-1;i>0;i--)                			// sort n tasks
    {
-     for(j=0;j<i;j++)
+     for(j=0;j<i;j++)					// bubble sort
        {
 	  if(b[j]>b[j+1])
 	    {
